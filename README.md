@@ -1,3 +1,3 @@
-# cv-on-mobile
+# Computer Vision on Mobile
  
-Issues: unable to pick the correct camera, script is choosing the zoom lens, rather than regular lens.
+
