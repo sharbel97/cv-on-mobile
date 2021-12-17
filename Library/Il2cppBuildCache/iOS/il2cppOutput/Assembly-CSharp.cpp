@@ -84,7 +84,9 @@ IL2CPP_EXTERN_C RuntimeClass* Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il
 IL2CPP_EXTERN_C RuntimeClass* Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral0AA8FEDE8D5E5BE9547E01F37B0D3647DF97E083;
+IL2CPP_EXTERN_C String_t* _stringLiteral6E9647BFA2494CDA3010F3F2F14B988825138B97;
 IL2CPP_EXTERN_C String_t* _stringLiteral80EEA01831E3E325B4C272B0FA87EF22494DDE74;
+IL2CPP_EXTERN_C String_t* _stringLiteralDA1198878E460AF0725F743B36ECAF5DA88ABC8E;
 struct Resolution_t1906ED569E57B1BD0C7F7A8DBCEA1D584F5F1767 ;
 
 struct WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E;
@@ -1536,10 +1538,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Texture_t9FE0218A1EEDF266E8C85879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* WebCamTexture_get_devices_m5E211AF8615AED8AAF97A669F41845FC85A0CD7C (const RuntimeMethod* method);
 // System.Void UnityEngine.Debug::Log(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8 (RuntimeObject * ___message0, const RuntimeMethod* method);
-// System.Boolean UnityEngine.WebCamDevice::get_isFrontFacing()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WebCamDevice_get_isFrontFacing_m43547AAF7B0729DB1962456A3EFF161B5E273E15 (WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C * __this, const RuntimeMethod* method);
 // System.String UnityEngine.WebCamDevice::get_name()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WebCamDevice_get_name_mD475CBF038076E5657D55D4DA43A7DC69CE6B6D4 (WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C * __this, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B (String_t* ___str00, String_t* ___str11, const RuntimeMethod* method);
+// System.Boolean UnityEngine.WebCamDevice::get_isFrontFacing()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WebCamDevice_get_isFrontFacing_m43547AAF7B0729DB1962456A3EFF161B5E273E15 (WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C * __this, const RuntimeMethod* method);
 // System.Int32 UnityEngine.Screen::get_width()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Screen_get_width_m52188F76E8AAF57BE373018CB14083BB74C43C1C (const RuntimeMethod* method);
 // System.Int32 UnityEngine.Screen::get_height()
@@ -1591,7 +1595,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhoneCamera_Start_mFA51649FC8B78F6D818D0
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral0AA8FEDE8D5E5BE9547E01F37B0D3647DF97E083);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6E9647BFA2494CDA3010F3F2F14B988825138B97);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral80EEA01831E3E325B4C272B0FA87EF22494DDE74);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA1198878E460AF0725F743B36ECAF5DA88ABC8E);
 		s_Il2CppMethodInitialized = true;
 	}
 	WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* V_0 = NULL;
@@ -1627,67 +1633,65 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhoneCamera_Start_mFA51649FC8B78F6D818D0
 
 IL_002d:
 	{
-		// for (int i = 0; i < devices.Length; i++)
-		V_1 = 0;
-		goto IL_0064;
-	}
-
-IL_0031:
-	{
-		// if (!devices[i].isFrontFacing)
+		// int i = 2;
+		V_1 = 2;
+		// Debug.Log("Looking at camera: " + devices[i].name);
 		WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* L_4 = V_0;
 		int32_t L_5 = V_1;
 		NullCheck(L_4);
-		bool L_6;
-		L_6 = WebCamDevice_get_isFrontFacing_m43547AAF7B0729DB1962456A3EFF161B5E273E15((WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C *)((L_4)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_5))), /*hidden argument*/NULL);
-		if (L_6)
+		String_t* L_6;
+		L_6 = WebCamDevice_get_name_mD475CBF038076E5657D55D4DA43A7DC69CE6B6D4((WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C *)((L_4)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_5))), /*hidden argument*/NULL);
+		String_t* L_7;
+		L_7 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteral6E9647BFA2494CDA3010F3F2F14B988825138B97, L_6, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
+		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_7, /*hidden argument*/NULL);
+		// if (!devices[i].isFrontFacing)
+		WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* L_8 = V_0;
+		int32_t L_9 = V_1;
+		NullCheck(L_8);
+		bool L_10;
+		L_10 = WebCamDevice_get_isFrontFacing_m43547AAF7B0729DB1962456A3EFF161B5E273E15((WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C *)((L_8)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_9))), /*hidden argument*/NULL);
+		if (L_10)
 		{
-			goto IL_0060;
+			goto IL_0094;
 		}
 	}
 	{
+		// Debug.Log("Chose camera: " + devices[i].name);
+		WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* L_11 = V_0;
+		int32_t L_12 = V_1;
+		NullCheck(L_11);
+		String_t* L_13;
+		L_13 = WebCamDevice_get_name_mD475CBF038076E5657D55D4DA43A7DC69CE6B6D4((WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C *)((L_11)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_12))), /*hidden argument*/NULL);
+		String_t* L_14;
+		L_14 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteralDA1198878E460AF0725F743B36ECAF5DA88ABC8E, L_13, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
+		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_14, /*hidden argument*/NULL);
 		// backCamera = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
-		WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* L_7 = V_0;
-		int32_t L_8 = V_1;
-		NullCheck(L_7);
-		String_t* L_9;
-		L_9 = WebCamDevice_get_name_mD475CBF038076E5657D55D4DA43A7DC69CE6B6D4((WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C *)((L_7)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_8))), /*hidden argument*/NULL);
-		int32_t L_10;
-		L_10 = Screen_get_width_m52188F76E8AAF57BE373018CB14083BB74C43C1C(/*hidden argument*/NULL);
-		int32_t L_11;
-		L_11 = Screen_get_height_m110C90A573EE67895DC4F59E9165235EA22039EE(/*hidden argument*/NULL);
-		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_12 = (WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 *)il2cpp_codegen_object_new(WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62_il2cpp_TypeInfo_var);
-		WebCamTexture__ctor_m347047EDACC380416BF11424F5F42500DA3F08A0(L_12, L_9, L_10, L_11, /*hidden argument*/NULL);
-		__this->set_backCamera_5(L_12);
-	}
-
-IL_0060:
-	{
-		// for (int i = 0; i < devices.Length; i++)
-		int32_t L_13 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_13, (int32_t)1));
-	}
-
-IL_0064:
-	{
-		// for (int i = 0; i < devices.Length; i++)
-		int32_t L_14 = V_1;
 		WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* L_15 = V_0;
+		int32_t L_16 = V_1;
 		NullCheck(L_15);
-		if ((((int32_t)L_14) < ((int32_t)((int32_t)((int32_t)(((RuntimeArray*)L_15)->max_length))))))
-		{
-			goto IL_0031;
-		}
+		String_t* L_17;
+		L_17 = WebCamDevice_get_name_mD475CBF038076E5657D55D4DA43A7DC69CE6B6D4((WebCamDevice_t84AC34018729892FB910F4F146AB9820DD006A2C *)((L_15)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_16))), /*hidden argument*/NULL);
+		int32_t L_18;
+		L_18 = Screen_get_width_m52188F76E8AAF57BE373018CB14083BB74C43C1C(/*hidden argument*/NULL);
+		int32_t L_19;
+		L_19 = Screen_get_height_m110C90A573EE67895DC4F59E9165235EA22039EE(/*hidden argument*/NULL);
+		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_20 = (WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 *)il2cpp_codegen_object_new(WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62_il2cpp_TypeInfo_var);
+		WebCamTexture__ctor_m347047EDACC380416BF11424F5F42500DA3F08A0(L_20, L_17, L_18, L_19, /*hidden argument*/NULL);
+		__this->set_backCamera_5(L_20);
 	}
+
+IL_0094:
 	{
 		// if (backCamera == null)
-		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_16 = __this->get_backCamera_5();
+		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_21 = __this->get_backCamera_5();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		bool L_17;
-		L_17 = Object_op_Equality_mEE9EC7EB5C7DC3E95B94AB904E1986FC4D566D54(L_16, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
-		if (!L_17)
+		bool L_22;
+		L_22 = Object_op_Equality_mEE9EC7EB5C7DC3E95B94AB904E1986FC4D566D54(L_21, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
+		if (!L_22)
 		{
-			goto IL_0083;
+			goto IL_00ad;
 		}
 	}
 	{
@@ -1698,17 +1702,17 @@ IL_0064:
 		return;
 	}
 
-IL_0083:
+IL_00ad:
 	{
 		// backCamera.Play();
-		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_18 = __this->get_backCamera_5();
-		NullCheck(L_18);
-		WebCamTexture_Play_m8527994B54606AE71602DB93195D2BA44CEDC2B1(L_18, /*hidden argument*/NULL);
+		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_23 = __this->get_backCamera_5();
+		NullCheck(L_23);
+		WebCamTexture_Play_m8527994B54606AE71602DB93195D2BA44CEDC2B1(L_23, /*hidden argument*/NULL);
 		// background.texture = backCamera;
-		RawImage_tFE280EF0C73AF19FE9AC24DB06501937DC2D6F1A * L_19 = __this->get_background_7();
-		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_20 = __this->get_backCamera_5();
-		NullCheck(L_19);
-		RawImage_set_texture_m1D7BAE6CB629C36894B664D9F5D68CACA88B8D99(L_19, L_20, /*hidden argument*/NULL);
+		RawImage_tFE280EF0C73AF19FE9AC24DB06501937DC2D6F1A * L_24 = __this->get_background_7();
+		WebCamTexture_t8E1DA1358E0E093A75FF35A336DD81B9EEC7AA62 * L_25 = __this->get_backCamera_5();
+		NullCheck(L_24);
+		RawImage_set_texture_m1D7BAE6CB629C36894B664D9F5D68CACA88B8D99(L_24, L_25, /*hidden argument*/NULL);
 		// isCameraAvailable = true;
 		__this->set_isCameraAvailable_4((bool)1);
 		// }
