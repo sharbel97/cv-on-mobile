@@ -25,22 +25,14 @@ public class PhoneCamera : MonoBehaviour
             return;
         }
 
-        //for (int i = 0; i < devices.Length; i++)
-        //{
-        //    Debug.Log("Looking at camera: " + devices[i].name);
-        //    if (!devices[i].isFrontFacing)
-        //    {
-        //        Debug.Log("Chose camera: " + devices[i].name);
-        //        backCamera = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
-        //    }
-        //}
-
-        int i = 3;
-        Debug.Log("Looking at camera: " + devices[i].name);
-        if (!devices[i].isFrontFacing)
+        for (int i = 0; i < devices.Length; i++)
         {
-            Debug.Log("Chose camera: " + devices[i].name);
-            backCamera = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
+            Debug.Log("Looking at camera: " + devices[i].name);
+            if (!devices[i].isFrontFacing)
+            {
+                Debug.Log("Chose camera: " + devices[i].name);
+                backCamera = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
+            }
         }
 
         if (backCamera == null)

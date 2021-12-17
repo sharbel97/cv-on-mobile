@@ -1633,8 +1633,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhoneCamera_Start_mFA51649FC8B78F6D818D0
 
 IL_002d:
 	{
-		// int i = 2;
-		V_1 = 2;
+		// int i = 3;
+		V_1 = 3;
 		// Debug.Log("Looking at camera: " + devices[i].name);
 		WebCamDeviceU5BU5D_t5509CE66483F44F4D0DB82BF41F86C649CB7B70E* L_4 = V_0;
 		int32_t L_5 = V_1;
